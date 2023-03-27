@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tilo1306/ignite-nodejs-03-api-solid-nodejs/issues"
   },
-  "homepage": "https://github.com/tilo1306/ignite-nodejs-03-api-solid-nodejs#readme"
+  "homepage": "https://github.com/tilo1306/ignite-nodejs-03-api-solid-nodejs#readme",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
 }
