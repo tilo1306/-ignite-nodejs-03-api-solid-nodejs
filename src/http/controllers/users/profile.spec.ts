@@ -12,13 +12,13 @@ describe('Profile (e2e)', () => {
   })
 
   it('should be able to profile', async () => {
-    await request(app.server).post('/users').send({
+    await request(app.server).post('/').send({
       name: 'John Doe',
       email: 'johndoe@example.com',
       password: '123465',
     })
 
-    const authResponse = await request(app.server).post('/users/session').send({
+    const authResponse = await request(app.server).post('/session').send({
       email: 'johndoe@example.com',
       password: '123465',
     })
@@ -26,7 +26,7 @@ describe('Profile (e2e)', () => {
     const { token } = authResponse.body
 
     const profileResponse = await request(app.server)
-      .get('/users/me')
+      .get('/me')
       .set('Authorization', `Bearer ${token}`)
       .send()
 
