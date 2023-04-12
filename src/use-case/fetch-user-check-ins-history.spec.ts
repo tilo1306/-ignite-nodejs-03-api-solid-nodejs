@@ -6,22 +6,21 @@ import { FetchUserCheckInsHistoryUseCase } from './fetch-user-check-ins-history'
 let checkInsRepository: InMemoryCheckInsRepository
 let sut: FetchUserCheckInsHistoryUseCase
 
-describe('Fetch USer Check-in Use Case', () => {
-  beforeEach(() => {
+describe('Fetch User Check-in History Use Case', () => {
+  beforeEach(async () => {
     checkInsRepository = new InMemoryCheckInsRepository()
-
     sut = new FetchUserCheckInsHistoryUseCase(checkInsRepository)
   })
 
   it('should be able to fetch check-in history', async () => {
     await checkInsRepository.create({
       gym_id: 'gym-01',
-      user_id: 'user-id',
+      user_id: 'user-01',
     })
 
     await checkInsRepository.create({
       gym_id: 'gym-02',
-      user_id: 'user-id',
+      user_id: 'user-01',
     })
 
     const { checkIns } = await sut.execute({
