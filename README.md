@@ -1,8 +1,4 @@
-# -ignite-nodejs-03-api-solid-nodejs
-
-# App
-
-GymPass style app.
+# GymPass apps
 
 ## RFs (Requisitos funcionais)
 
